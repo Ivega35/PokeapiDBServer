@@ -1,0 +1,25 @@
+<script>
+  function deletePokemon(name) {
+    fetch(`http://localhost:8080/pokemon/${name}`, {
+      method: "delete"
+    })
+    window.location.href = 'http://localhost:8080/pokemon'
+  }
+</script>
+
+<div class="card d-flex justify-content-center my-3 mx-5" style="width: 75%;">
+  <div class="row">
+    <div class="col-md-4">
+      <img src="{{pokemon.photo}}" class="img-fluid rounded-start" alt="{{pokemon.name}}">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body text-center">
+        <h3 class="card-title mb-5">{{pokemon.name}}</h5>
+        <p class="card-text my-3 fs-3 text-start">Tipo: {{pokemon.type}}</p>
+        <p class="card-text fs-4 text-start">{{pokemon.description}}</p>
+        <a href="/pokemon" class="btn btn-primary mt-3 py-2">Home</a>
+        <button class="btn btn-primary mt-3 py-2" onclick="deletePokemon('{{pokemon.name}}')">Delete {{pokemon.name}}</button>
+      </div>
+    </div>
+  </div>
+</div>

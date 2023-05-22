@@ -1,0 +1,11 @@
+<section class="container-fluid">
+    <div class="row d-flex justify-content-around">
+        {{#each pokemons}}
+        <div class="card d-flex justify-content-center my-5 mx-3 p-2" style="width: 14rem;">
+            <h5 class="text-center my-2">{{this.name}}({{this.type}})</h5>
+            <img class="my-2" src="{{this.photo}}" alt=`{{this.name}}` height="200" width="200">
+            <a href="/pokemon/{{this.name}}" class="btn btn-primary">Details</a>
+        </div>
+        {{/each}}
+    </div>
+</section>
